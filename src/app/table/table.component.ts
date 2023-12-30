@@ -2,10 +2,10 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTable, MatTableModule } from '@angular/material/table';
-import { SharedTableDataSource, SharedTableItem } from './shared-table-datasource';
+import { SharedTableDataSource, SharedTableItem } from './table-datasource';
 
 @Component({
-    selector: 'app-shared-table',
+    selector: 'app-table',
     template: `
         <div class="mat-elevation-z8">
             <table mat-table class="full-width-table" matSort aria-label="Elements">
@@ -46,7 +46,7 @@ import { SharedTableDataSource, SharedTableItem } from './shared-table-datasourc
     standalone: true,
     imports: [MatTableModule, MatPaginatorModule, MatSortModule],
 })
-export default class SharedTableComponent implements AfterViewInit {
+export class SharedTableComponent implements AfterViewInit {
     @ViewChild(MatPaginator) paginator!: MatPaginator;
     @ViewChild(MatSort) sort!: MatSort;
     @ViewChild(MatTable) table!: MatTable<SharedTableItem>;

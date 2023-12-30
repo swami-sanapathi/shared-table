@@ -28,6 +28,7 @@ import { RouterOutlet } from '@angular/router';
         border-radius: 10px;
         background-color: #f8f8f8;
         cursor: pointer;
+        font-size: 16px;
       }
     `,
 })

@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export default [
     {
         path: 'table',
-        loadComponent: () => import('./shared-table/shared-table.component'),
+        loadComponent: () => import('./shared/shared.component'),
     },
     {
         path: '**',
