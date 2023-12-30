@@ -46,7 +46,7 @@ import { SharedTableDataSource, SharedTableItem } from './shared-table-datasourc
     standalone: true,
     imports: [MatTableModule, MatPaginatorModule, MatSortModule],
 })
-export class SharedTableComponent implements AfterViewInit {
+export default class SharedTableComponent implements AfterViewInit {
     @ViewChild(MatPaginator) paginator!: MatPaginator;
     @ViewChild(MatSort) sort!: MatSort;
     @ViewChild(MatTable) table!: MatTable<SharedTableItem>;

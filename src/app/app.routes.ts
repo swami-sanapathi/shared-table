@@ -1,3 +1,13 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+export default [
+    {
+        path: 'table',
+        loadComponent: () => import('./shared-table/shared-table.component'),
+    },
+    {
+        path: '**',
+        redirectTo: 'table',
+        pathMatch: 'full',
+    },
+] as Routes;
