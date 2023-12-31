@@ -1,18 +1,20 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [RouterOutlet],
+    imports: [RouterOutlet, RouterLink, RouterLinkActive],
     template: `
         <div class="router-outlet-container">
             <div class="router-outlet-header">
-                <button>Default</button>
+                <button [routerLink]="['/default']" routerLinkActive="active">Default</button>
                 <button>Custom Header</button>
                 <button>Custom Header and Data</button>
             </div>
-            <router-outlet />
+            <div class="display-table">
+                <router-outlet />
+            </div>
         </div>
     `,
     styles: `
@@ -30,6 +32,15 @@ import { RouterOutlet } from '@angular/router';
         cursor: pointer;
         font-size: 16px;
       }
+      .active {
+        background-color: #ddd;
+      } 
+    .display-table {
+        margin: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #f8f8f8;
+        }
     `,
 })
 export class AppComponent {}

@@ -47,6 +47,5 @@ export class SharedTableComponent {
     students = signal<Student[]>([]);
     constructor() {
         this.students.set(StudentInfo);
-        console.log(this.students());
     }
 }

@@ -2,12 +2,12 @@ import { Routes } from '@angular/router';
 
 export default [
     {
-        path: 'table',
+        path: 'default',
         loadComponent: () => import('./shared/shared.component'),
     },
     {
         path: '**',
-        redirectTo: 'table',
+        redirectTo: 'default',
         pathMatch: 'full',
     },
 ] as Routes;
