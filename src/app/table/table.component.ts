@@ -15,9 +15,12 @@ import { students as StudentInfo } from '../utils/data-access';
                 </tr>
             </thead>
             <tbody>
-                @for (item of students(); track $index) {
-                    {{ item | json }}, <br />
-                    <td>{{ item.name }}</td>
+                @for (student of students(); track $index) {
+                    <tr>
+                        @for (kv of student | keyvalue; track $index) {
+                            <td>{{ kv.value }}</td>
+                        }
+                    </tr>
                 }
             </tbody>
         </table>
