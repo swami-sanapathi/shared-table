@@ -1,20 +1,21 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [RouterOutlet, RouterLink, RouterLinkActive],
+    imports: [RouterOutlet, RouterLink, RouterLinkActive, ButtonModule],
     template: `
         <div class="router-outlet-container">
-            <div class="router-outlet-header">
-                <button [routerLink]="['/default']" routerLinkActive="active">Default</button>
-                <button>Custom Header</button>
-                <button>Custom Header and Data</button>
-            </div>
-            <div class="display-table">
-                <router-outlet />
-            </div>
+            @defer (on idle) {
+                <div class="router-outlet-header">
+                    <p-button [routerLink]="['/default']" routerLinkActive="active" label="Default"></p-button>
+                </div>
+                <div class="display-table">
+                    <router-outlet />
+                </div>
+            }
         </div>
     `,
     styles: `
@@ -32,9 +33,6 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
         cursor: pointer;
         font-size: 16px;
       }
-      .active {
-        background-color: #ddd;
-      } 
     .display-table {
         margin: 20px;
         padding: 20px;
